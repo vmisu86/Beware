@@ -1,0 +1,58 @@
+<ion-header>
+	<ion-navbar>
+		<ion-buttons end>
+			<button ion-button icon-only [navPush]="addPlacePage">
+				<ion-icon name="add"></ion-icon>
+			</button>
+		</ion-buttons>
+
+
+		<ion-title text-center>
+			App Secu
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button ion-button
+                icon-left
+                round
+                type="button"
+                color="danger"
+                [navPush]="urgentPage"
+        >Urgent</button>
+      </ion-col>
+      <ion-col>
+      <button ion-button ion-button
+              icon-left
+              round
+              type="button"
+              color="secondary"
+              [navPush]="classicPage"
+      >Classic</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1 text-center>Your security is the first be careful! Check the conditions before your trip.</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+	<ion-card *ngFor="let place of places; let i = index"
+	          (click)="onOpenPlace(place, i)">
+		<img [src]="place.imageUrl">
+		<ion-card-content text-center>
+			<ion-card-title>
+				{{ place.title }}
+			</ion-card-title>
+			<p>{{ place.description }}</p>
+		</ion-card-content>
+	</ion-card>
+
+
+</ion-content>
