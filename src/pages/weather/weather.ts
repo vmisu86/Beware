@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {WeatherProvider} from "../../providers/weather/weather";
+import {Storage} from "@ionic/storage";
+import {SettingsPage} from "../settings/settings";
 
-/**
- * Generated class for the WeatherPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,12 +11,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'weather.html',
 })
 export class WeatherPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  settingsPage = SettingsPage;
+  weather:any;
+  location:{
+    city:string,
+    state:string
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WeatherPage');
+  constructor(
+    public navCtrl: NavController,
+    private weatherProvider:WeatherProvider,
+    private storage:Storage) {
+
+  }
+
+  ionViewWillEnter(){
+    this.storage.get('location').then((val) => {
+      if(val != null){
+        this.location = JSON.parse(val);
+      } else {
+        this.location = {
+          city: 'Nice',
+          state: 'France'
+        }
+      }
+
+      this.weatherProvider.getWeather(this.location.city, this.location.state)  .subscribe(weather => {
+        this.weather = weather.current_observation;
+      });
+    });
   }
 
 }

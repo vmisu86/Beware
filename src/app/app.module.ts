@@ -14,16 +14,17 @@ import {HomePage} from '../pages/home/home';
 import {AddPlacePage} from "../pages/add-place/add-place";
 import {PlacePage} from "../pages/place/place";
 import {SetLocationPage} from "../pages/set-location/set-location";
-// import {apiKey} from "../keys/apikey";
-// import {Keys} from "../keys/keys";
 import * as keys from '../keys/keys.json'
 import {PlacesService} from "../services/places";
 import {AboutPage} from "../pages/about/about";
 import {ContactPage} from "../pages/contact/contact";
 import {TabsPage} from "../pages/tabs/tabs";
-import {WeatherPage} from "../pages/weather/weather";
 import {UrgentPage} from "../pages/urgent/urgent";
 import {ClassicPage} from "../pages/classic/classic";
+import {WeatherProvider} from "../providers/weather/weather";
+import {WeatherPage} from "../pages/weather/weather";
+import {HttpModule} from "@angular/http";
+import {SettingsPage} from "../pages/settings/settings";
 
 console.log('api key: %s', keys[ 'googleMaps' ]);
 
@@ -37,12 +38,14 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 		AddPlacePage,
 		PlacePage,
 		SetLocationPage,
-    WeatherPage,
     UrgentPage,
-    ClassicPage
+    ClassicPage,
+    WeatherPage,
+    SettingsPage
 	],
 	imports: [
 		BrowserModule,
+    HttpModule,
 		IonicModule.forRoot(MyApp),
 		IonicStorageModule.forRoot(),
 		AgmCoreModule.forRoot({apiKey: keys[ 'googleMaps' ]})
@@ -57,9 +60,10 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 		AddPlacePage,
 		PlacePage,
 		SetLocationPage,
-    WeatherPage,
     UrgentPage,
-    ClassicPage
+    ClassicPage,
+    WeatherPage,
+    SettingsPage
 	],
 	providers: [
 		StatusBar,
@@ -68,7 +72,8 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 		Camera,  // idem
 		PlacesService,
 		File,
-		{provide: ErrorHandler, useClass: IonicErrorHandler}
+		{provide: ErrorHandler, useClass: IonicErrorHandler},
+    WeatherProvider
 	]
 })
 export class AppModule {
