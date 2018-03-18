@@ -25,6 +25,7 @@ import {WeatherProvider} from "../providers/weather/weather";
 import {WeatherPage} from "../pages/weather/weather";
 import {HttpModule} from "@angular/http";
 import {SettingsPage} from "../pages/settings/settings";
+import {GoogleMaps} from "@ionic-native/google-maps";
 
 console.log('api key: %s', keys[ 'googleMaps' ]);
 
@@ -68,8 +69,8 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 	providers: [
 		StatusBar,
 		SplashScreen,
-		Geolocation, // Talvez incluir somente no modules da página específica
-		Camera,  // idem
+		Geolocation,
+		Camera,
 		PlacesService,
 		File,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},

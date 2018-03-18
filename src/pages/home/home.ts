@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ModalController} from 'ionic-angular';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {LoadingController, ModalController} from 'ionic-angular';
 import {AddPlacePage} from "../add-place/add-place";
 import {Place} from "../../model/place";
 import {PlacesService} from "../../services/places";
@@ -8,6 +8,10 @@ import {UrgentPage} from "../urgent/urgent";
 import {ClassicPage} from "../classic/classic";
 import {WeatherProvider} from "../../providers/weather/weather";
 import {Storage} from "@ionic/storage";
+import {Geolocation} from "@ionic-native/geolocation";
+
+declare const google;
+
 
 @Component({
 	selector: 'page-home',
@@ -23,19 +27,82 @@ export class HomePage implements OnInit{
     city:string,
     state:string
   }
-
+  @ViewChild('map') mapRef: ElementRef;
+  map: goog
 	constructor(public modalCtrl: ModalController,
               private weatherProvider:WeatherProvider,
               private storage:Storage,
-	            private placesService: PlacesService) {
+	            private placesService: PlacesService,
+              private geoCtrl: Geolocation,
+              private loadingCtrl: LoadingController) {
 
 	}
+
+	ionViewDidLoad(){
+	  this.showMap();
+  }
+
+  showMap(){
+	 //  const location = new google.maps.LatLng(43.690929, 7.237377);
+    //
+	 //  const options = {
+	 //    center: location,
+    //   zoom: 20,
+    //   mapTypeId: 'roadmap'
+    // };
+    // const map = new google.maps.Map(this.mapRef.nativeElement, options);
+    //
+    // //this.addMarker(location, map);
+
+    let posNice = { lat: 43.690929, lng: 7.237377 }
+    let map = new google.maps.Map(this.mapRef.nativeElement, {
+      zoom: 12,
+      center: posNice,
+      mapTypeId: 'roadmap'
+    });
+    let infoWindow = new google.maps.InfoWindow({ map: map });
+
+    // Try HTML5 geolocation.
+
+
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        infoWindow.setPosition(pos);
+        infoWindow.setContent('You\'re here! ');
+
+        let marker = new google.maps.Marker({
+          position: pos,
+          map: map
+        });
+        map.setCenter(pos);
+      }, () => {
+        this.handleLocationError(true, infoWindow, map.getCenter());
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      this.handleLocationError(false, infoWindow, map.getCenter());
+    }
+  }
+
+  // addMarker(position, map){
+	//   return new google.maps.Marker({
+  //     position,
+  //     map
+  //   });
+  // }
+
 
 	ngOnInit(){
 		this.placesService.fetchPlaces()
 			.then(
 				(places: Place[]) => this.places = places
 			)
+
 	}
 
 	onOpenPlace(place: Place, index: number) {
@@ -61,5 +128,13 @@ export class HomePage implements OnInit{
       });
     });
   }
+
+  handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+      'Error: The Geolocation service failed.' :
+      'Error: Your browser doesn\'t support geolocation.');
+  }
+
 
 }
