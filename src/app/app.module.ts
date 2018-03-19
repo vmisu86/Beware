@@ -26,6 +26,7 @@ import {WeatherPage} from "../pages/weather/weather";
 import {HttpModule} from "@angular/http";
 import {SettingsPage} from "../pages/settings/settings";
 import {GoogleMaps} from "@ionic-native/google-maps";
+import {AlcoholPage} from "../pages/alcohol/alcohol";
 
 console.log('api key: %s', keys[ 'googleMaps' ]);
 
@@ -42,6 +43,7 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
     UrgentPage,
     ClassicPage,
     WeatherPage,
+		AlcoholPage,
     SettingsPage
 	],
 	imports: [
@@ -64,6 +66,7 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
     UrgentPage,
     ClassicPage,
     WeatherPage,
+		AlcoholPage,
     SettingsPage
 	],
 	providers: [

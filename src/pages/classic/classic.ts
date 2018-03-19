@@ -5,6 +5,8 @@ import {PlacesService} from "../../services/places";
 import {Place} from "../../model/place";
 import {WeatherProvider} from "../../providers/weather/weather";
 import {Storage} from "@ionic/storage";
+import {AlcoholPage} from "../alcohol/alcohol";
+
 
 /**
  * Generated class for the ClassicPage page.
@@ -20,6 +22,7 @@ import {Storage} from "@ionic/storage";
 })
 export class ClassicPage {
 
+  alcoholPage = AlcoholPage;
 	places: Place[] = [];
   location:{
     city:string,
