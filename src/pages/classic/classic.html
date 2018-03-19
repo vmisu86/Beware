@@ -1,3 +1,4 @@
+
 <!--
   Generated template for the ClassicPage page.
 
@@ -17,5 +18,27 @@
 
 
 <ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      Weather
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row *ngIf="weather">
+        <ion-col width-50 offset-25>
+          <h2 class="location">{{weather.display_location.full}}</h2>
+        </ion-col>
+        <ion-col>
+          <div class="icon"><img src="{{weather.icon_url}}" alt=""></div>
+        </ion-col>
+        <ion-col>
+          <h3 class="desc">{{weather.weather}}</h3>
+        </ion-col>
+        <ion-col>
+          <h1 class="temp">{{weather.temp_c}}&deg;</h1>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

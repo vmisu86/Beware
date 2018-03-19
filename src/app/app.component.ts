@@ -34,10 +34,10 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage, icon: "home"},
-      { title: 'Add Place', component: AddPlacePage, icon: "add-circle"},
-      { title: 'Weather', component: WeatherPage, icon: "cloud" },
-      { title: 'Contact', component: ContactPage, icon: "contacts" },
-      { title: 'About', component: AboutPage, icon: "information-circle" }
+      { title: 'Help', component: AboutPage, icon: "medkit" },
+      { title: 'Begin', component: ContactPage, icon: "car" },
+      { title: 'Weather', component: WeatherPage, icon: "cloudy-night" },
+      { title: 'Incident', component: AddPlacePage, icon: "add-circle"}
     ];
 
   }
@@ -57,4 +57,3 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 }
-

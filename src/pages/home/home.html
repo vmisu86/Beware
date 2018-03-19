@@ -49,28 +49,45 @@
     </ion-row>
     <ion-row text-center>
       <ion-col>
-        <button ion-button ion-button
-                icon-left
-                round
+				<button ion-button color="danger" icon-start [navPush]="urgentPage">
+		      <ion-icon name='medkit' is-active="false"></ion-icon>
+		      Emergency
+		    </button>
+        <!-- <button ion-button
+                icon-right
                 type="button"
                 color="danger"
                 [navPush]="urgentPage"
-        >Urgent</button>
+
+				>Urgent</button> -->
       </ion-col>
       <ion-col>
-      <button ion-button ion-button
-              icon-left
-              round
+				<button ion-button color="secondary" icon-start [navPush]="classicPage">
+					<ion-icon name='car' is-active="false"></ion-icon>
+					Get Started
+				</button>
+      <!-- <button ion-button
+              icon-right
               type="button"
               color="secondary"
-              [navPush]="classicPage"
-      >Classic</button>
+              [navPush]="classicPage">
+			<ion-icon name="car"></ion-icon>
+			Classic
+			</button> -->
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <h1 text-center>Your security is the first be careful! Check the conditions before your trip.</h1>
-      </ion-col>
+				<ion-card>
+
+				  <ion-card-header>
+				    BeWare, Be safe.
+				  </ion-card-header>
+
+				  <ion-card-content>
+				    Your security is the first be careful! Check the conditions before your trip.
+				  </ion-card-content>
+
+				</ion-card>>
     </ion-row>
   </ion-grid>
 

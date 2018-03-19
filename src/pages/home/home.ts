@@ -28,7 +28,7 @@ export class HomePage implements OnInit{
     state:string
   }
   @ViewChild('map') mapRef: ElementRef;
-  map: goog
+  map: goog;
 	constructor(public modalCtrl: ModalController,
               private weatherProvider:WeatherProvider,
               private storage:Storage,
