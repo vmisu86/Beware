@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the UrgentPage page.
@@ -15,11 +16,79 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class UrgentPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UrgentPage');
+  }
+
+  showConfirmPolice() {
+    let confirm = this.alertCtrl.create({
+      title: 'Appeler le numéro 17 ?',
+      message: "Attention, en appelant ce numéro, vous confirmer que êtes maitre de vos actes et vous seul êtes responsable d'eventuel litige",
+      buttons: [
+        {
+          text: 'Annuler',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Confirmer',
+          handler: () => {
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
+  showConfirmPompier() {
+    let confirm = this.alertCtrl.create({
+      title: 'Appeler le numéro 18 ?',
+      message: "Attention, en appelant ce numéro, vous confirmer que êtes maitre de vos actes et vous seul êtes responsable d'eventuel litige",
+      buttons: [
+        {
+          text: 'Annuler',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Confirmer',
+          handler: () => {
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
+  showConfirmSMUR() {
+    let confirm = this.alertCtrl.create({
+      title: 'Appeler le numéro 15 ?',
+      message: "Attention, en appelant ce numéro, vous confirmer que êtes maitre de vos actes et vous seul êtes responsable d'eventuel litige",
+      buttons: [
+        {
+          text: 'Annuler',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Confirmer',
+          handler: () => {
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
 }

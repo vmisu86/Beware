@@ -10,12 +10,65 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>urgent</ion-title>
+    <ion-title>Cas d'urgence</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Appel d'urgence
+    </ion-list-header>
+    <ion-item>
+      <ion-badge item-start outline>17</ion-badge>
+      Police
+      <button ion-button outline item-end icon-only (click)="showConfirmPolice()">
+        <ion-icon name="call"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-badge item-start color="danger" >18</ion-badge>
+      Pompier
+      <button ion-button outline color="danger" item-end icon-only (click)="showConfirmPompier()">
+        <ion-icon name="call"></ion-icon>
+      </button>
+    </ion-item><ion-item>
+      <ion-badge item-start color="secondary">15</ion-badge>
+      SMUR
+      <button ion-button outline color="secondary" item-end icon-only (click)="showConfirmSMUR()">
+        <ion-icon name="call"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Geste de premier secours
+    </ion-list-header>
+    <ion-item>
+      <ion-badge item-start color="dark" outline>1</ion-badge>
+      Sécurité pour tous
+      <button ion-button outline item-end icon-only color="dark">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-badge item-start color="dark" outline>2</ion-badge>
+      Inconscience
+      <button ion-button outline item-end icon-only color="dark">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-badge item-start color="dark" outline>3</ion-badge>
+      Saignement
+      <button ion-button outline item-end icon-only color="dark">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
 
 </ion-content>
