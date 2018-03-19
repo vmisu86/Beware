@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Geolocation} from "@ionic-native/geolocation";
 import {PlacesService} from "../../services/places";
-import {Geolocation} from "@ionic-native/geolocation";
+import {Place} from "../../model/place";
 import {WeatherProvider} from "../../providers/weather/weather";
+import {Storage} from "@ionic/storage";
 
 /**
  * Generated class for the ClassicPage page.
@@ -30,6 +31,7 @@ export class ClassicPage {
               public navParams: NavParams,
               private weatherProvider:WeatherProvider,
 	            private placesService: PlacesService,
+              private storage:Storage,
               private geoCtrl: Geolocation,) {
   }
 
@@ -37,23 +39,22 @@ export class ClassicPage {
     console.log('ionViewDidLoad ClassicPage');
   }
 
-  // ionViewWillEnter(){
-  //   this.places = this.placesService.loadPlaces();
-  //   this.places = this.placesService.loadPlaces();
-  //   this.storage.get('location').then((val) => {
-  //     if(val != null){
-  //       this.location = JSON.parse(val);
-  //     } else {
-  //       this.location = {
-  //         city: 'Nice',
-  //         state: 'France'
-  //       }
-  //     }
-  //
-  //     this.weatherProvider.getWeather(this.location.city, this.location.state)  .subscribe(weather => {
-  //       this.weather = weather.current_observation;
-  //     });
-  //   });
-  // }
+  ionViewWillEnter(){
+    this.places = this.placesService.loadPlaces();
+    this.storage.get('location').then((val) => {
+      if(val != null){
+        this.location = JSON.parse(val);
+      } else {
+        this.location = {
+          city: 'Nice',
+          state: 'France'
+        }
+      }
+
+      this.weatherProvider.getWeather(this.location.city, this.location.state)  .subscribe(weather => {
+        this.weather = weather.current_observation;
+      });
+    });
+  }
 
 }
