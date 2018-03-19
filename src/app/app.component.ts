@@ -8,6 +8,7 @@ import {WeatherPage} from "../pages/weather/weather";
 import {AddPlacePage} from "../pages/add-place/add-place";
 import {ContactPage} from "../pages/contact/contact";
 import {AboutPage} from "../pages/about/about";
+import {ClassicPage} from "../pages/classic/classic";
 
 
 @Component({
@@ -35,7 +36,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage, icon: "home"},
       { title: 'Help', component: AboutPage, icon: "medkit" },
-      { title: 'Begin', component: ContactPage, icon: "car" },
+      { title: 'Begin', component: ClassicPage, icon: "car" },
       { title: 'Weather', component: WeatherPage, icon: "cloudy-night" },
       { title: 'Incident', component: AddPlacePage, icon: "add-circle"}
     ];
