@@ -28,6 +28,7 @@ import {SettingsPage} from "../pages/settings/settings";
 import {GoogleMaps} from "@ionic-native/google-maps";
 import {AlcoholPage} from "../pages/alcohol/alcohol";
 import {CallNumber} from "@ionic-native/call-number";
+import {NativeGeocoder} from "@ionic-native/native-geocoder";
 
 console.log('api key: %s', keys[ 'googleMaps' ]);
 
@@ -79,7 +80,8 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 		File,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
     WeatherProvider,
-		CallNumber
+		CallNumber,
+    NativeGeocoder
 	]
 })
 export class AppModule {

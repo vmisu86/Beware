@@ -10,6 +10,7 @@ import {WeatherPage} from "../weather/weather";
 import {WeatherProvider} from "../../providers/weather/weather";
 import {Storage} from "@ionic/storage";
 import {Geolocation} from "@ionic-native/geolocation";
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 
 declare const google;
 
@@ -29,6 +30,8 @@ export class HomePage implements OnInit{
     city:string,
     state:string
   }
+  addressFixe:string;
+
   @ViewChild('map') mapRef: ElementRef;
   //map: goog;
 	constructor(public modalCtrl: ModalController,
@@ -36,7 +39,8 @@ export class HomePage implements OnInit{
               private storage:Storage,
 	            private placesService: PlacesService,
               private geoCtrl: Geolocation,
-              private loadingCtrl: LoadingController) {
+              private loadingCtrl: LoadingController,
+              private nativeGeocoder: NativeGeocoder) {
 
 	}
 
@@ -63,7 +67,7 @@ export class HomePage implements OnInit{
       mapTypeId: 'roadmap'
     });
     let infoWindow = new google.maps.InfoWindow({ map: map });
-
+    this.addressFixe = "Antibes"
     // Try HTML5 geolocation.
 
 
@@ -76,6 +80,10 @@ export class HomePage implements OnInit{
         };
         infoWindow.setPosition(pos);
         infoWindow.setContent('You\'re here! ');
+
+        this.nativeGeocoder.reverseGeocode(pos.lat, pos.lng)
+          .then((result: NativeGeocoderReverseResult) => this.addressFixe = JSON.stringify(result))
+          .catch((error: any) => console.log(error));
 
         let marker = new google.maps.Marker({
           position: pos,
