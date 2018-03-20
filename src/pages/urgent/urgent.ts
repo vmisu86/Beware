@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-import { CallNumber } from '@ionic-native/call-number';
+// import { CallNumber } from '@ionic-native/call-number';
 
 /**
  * Generated class for the UrgentPage page.
@@ -112,7 +112,7 @@ export class UrgentPage {
         {
           text: 'Confirmer',
           handler: () => {
-            // callSAMU();
+            //callSAMU();
             console.log('Agree clicked');
           }
         }
