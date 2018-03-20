@@ -55,7 +55,7 @@ export class UrgentPage {
   showConfirmPolice() {
     let confirm = this.alertCtrl.create({
       title: 'Appeler le numéro 17 ?',
-      message: "Attention, en appelant ce numéro, vous confirmer que êtes maitre de vos actes et vous seul êtes responsable d'eventuel litige",
+      message: "Attention, en appelant ce numéro, vous confirmez que êtes maitre de vos actes et vous seul êtes responsable d'eventuels poursuites",
       buttons: [
         {
           text: 'Annuler',
@@ -78,7 +78,7 @@ export class UrgentPage {
   showConfirmPompier() {
     let confirm = this.alertCtrl.create({
       title: 'Appeler le numéro 18 ?',
-      message: "Attention, en appelant ce numéro, vous confirmer que êtes maitre de vos actes et vous seul êtes responsable d'eventuel litige",
+      message: "Attention, en appelant ce numéro, vous confirmez que êtes maitre de vos actes et vous seul êtes responsable d'eventuels poursuites",
       buttons: [
         {
           text: 'Annuler',
@@ -101,7 +101,7 @@ export class UrgentPage {
   showConfirmSAMU() {
     let confirm = this.alertCtrl.create({
       title: 'Appeler le numéro 15 ?',
-      message: "Attention, en appelant ce numéro, vous confirmer que êtes maitre de vos actes et vous seul êtes responsable d'eventuel litige",
+      message: "Attention, en appelant ce numéro, vous confirmez que êtes maitre de vos actes et vous seul êtes responsable d'eventuels poursuites",
       buttons: [
         {
           text: 'Annuler',
