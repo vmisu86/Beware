@@ -6,6 +6,7 @@ import {PlacesService} from "../../services/places";
 import {PlacePage} from "../place/place";
 import {UrgentPage} from "../urgent/urgent";
 import {ClassicPage} from "../classic/classic";
+import {WeatherPage} from "../weather/weather";
 import {WeatherProvider} from "../../providers/weather/weather";
 import {Storage} from "@ionic/storage";
 import {Geolocation} from "@ionic-native/geolocation";
@@ -21,6 +22,7 @@ export class HomePage implements OnInit{
 	addPlacePage = AddPlacePage;
 	urgentPage = UrgentPage;
 	classicPage = ClassicPage;
+	weatherPage = WeatherPage;
 	places: Place[] = [];
   weather:any;
   location:{

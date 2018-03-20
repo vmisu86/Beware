@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { CallNumber } from '@ionic-native/call-number';
 
 /**
  * Generated class for the UrgentPage page.
@@ -18,7 +19,33 @@ export class UrgentPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public alertCtrl: AlertController) {
+              public alertCtrl: AlertController
+              // ,private callNumber: CallNumber
+            ) {
+  }
+
+  callPolice() {
+    // try {
+    //   await this.callNumber.callNumber("001700", true)
+    //   .then(res => console.log('Launched dialer!', res))
+    //   .catch(err => console.log('Error launching dialer', err));
+    // }
+    // catch(e){
+    //   console.error(e);
+    // }
+
+  }
+
+  callPompier() {
+    // this.callNumber.callNumber("001800", true)
+    // .then(res => console.log('Launched dialer!', res))
+    // .catch(err => console.log('Error launching dialer', err));
+  }
+
+  callSAMU() {
+    // this.callNumber.callNumber("001500", true)
+    // .then(res => console.log('Launched dialer!', res))
+    // .catch(err => console.log('Error launching dialer', err));
   }
 
   ionViewDidLoad() {
@@ -39,6 +66,7 @@ export class UrgentPage {
         {
           text: 'Confirmer',
           handler: () => {
+            // callPolice();
             console.log('Agree clicked');
           }
         }
@@ -61,6 +89,7 @@ export class UrgentPage {
         {
           text: 'Confirmer',
           handler: () => {
+            // callPompier();
             console.log('Agree clicked');
           }
         }
@@ -69,7 +98,7 @@ export class UrgentPage {
     confirm.present();
   }
 
-  showConfirmSMUR() {
+  showConfirmSAMU() {
     let confirm = this.alertCtrl.create({
       title: 'Appeler le numéro 15 ?',
       message: "Attention, en appelant ce numéro, vous confirmer que êtes maitre de vos actes et vous seul êtes responsable d'eventuel litige",
@@ -83,6 +112,7 @@ export class UrgentPage {
         {
           text: 'Confirmer',
           handler: () => {
+            // callSAMU();
             console.log('Agree clicked');
           }
         }

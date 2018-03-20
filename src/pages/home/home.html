@@ -11,7 +11,7 @@
 
 
 		<ion-title text-center>
-			App Secu
+			BeWare
 		</ion-title>
 	</ion-navbar>
 </ion-header>
@@ -83,9 +83,23 @@
 				    BeWare, Be safe.
 				  </ion-card-header>
 
-				  <ion-card-content>
-				    Your security is the first be careful! Check the conditions before your trip.
+				  <ion-card-content  class="card-home-last">
+				    Your security our first priority, try to be careful! Check the conditions before your trip.
 				  </ion-card-content>
+
+					<ion-card-content  class="card-home-last">
+						<!-- <button ion-button outline item-end>
+			        <ion-icon item-start name="share-alt"></ion-icon>
+							full details
+			      </button> -->
+						<ion-item>
+							<button ion-button clear verysmall item-end icon-start [navPush]="weatherPage">
+			          <ion-icon name='share-alt'></ion-icon>
+			          Full Details
+			        </button>
+						</ion-item>
+
+					</ion-card-content>
 
 				</ion-card>
     </ion-row>

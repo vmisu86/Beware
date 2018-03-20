@@ -9,6 +9,7 @@ import {AddPlacePage} from "../pages/add-place/add-place";
 import {ContactPage} from "../pages/contact/contact";
 import {AboutPage} from "../pages/about/about";
 import {ClassicPage} from "../pages/classic/classic";
+import {UrgentPage} from "../pages/urgent/urgent";
 
 
 @Component({
@@ -35,7 +36,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage, icon: "home"},
-      { title: 'Help', component: AboutPage, icon: "medkit" },
+      { title: 'Help', component: UrgentPage, icon: "medkit" },
       { title: 'Begin', component: ClassicPage, icon: "car" },
       { title: 'Weather', component: WeatherPage, icon: "cloudy-night" },
       { title: 'Incident', component: AddPlacePage, icon: "add-circle"}
