@@ -77,7 +77,8 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 		PlacesService,
 		File,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
-    WeatherProvider
+    WeatherProvider,
+		CallNumber
 	]
 })
 export class AppModule {

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-// import { CallNumber } from '@ionic-native/call-number';
+import { CallNumber } from '@ionic-native/call-number';
 
 /**
  * Generated class for the UrgentPage page.
@@ -19,33 +19,32 @@ export class UrgentPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public alertCtrl: AlertController
-              // ,private callNumber: CallNumber
-            ) {
+              public alertCtrl: AlertController,
+              private callNumber: CallNumber) {
   }
 
   callPolice() {
-    // try {
-    //   await this.callNumber.callNumber("001700", true)
-    //   .then(res => console.log('Launched dialer!', res))
-    //   .catch(err => console.log('Error launching dialer', err));
-    // }
-    // catch(e){
-    //   console.error(e);
-    // }
+    try {
+      this.callNumber.callNumber("0785924985", true)
+      .then(res => console.log('Launched dialer!', res))
+      .catch(err => console.log('Error launching dialer', err));
+    }
+    catch(e){
+      console.error(e);
+    }
 
   }
 
   callPompier() {
-    // this.callNumber.callNumber("001800", true)
-    // .then(res => console.log('Launched dialer!', res))
-    // .catch(err => console.log('Error launching dialer', err));
+    this.callNumber.callNumber("001800", true)
+    .then(res => console.log('Launched dialer!', res))
+    .catch(err => console.log('Error launching dialer', err));
   }
 
   callSAMU() {
-    // this.callNumber.callNumber("001500", true)
-    // .then(res => console.log('Launched dialer!', res))
-    // .catch(err => console.log('Error launching dialer', err));
+    this.callNumber.callNumber("001500", true)
+    .then(res => console.log('Launched dialer!', res))
+    .catch(err => console.log('Error launching dialer', err));
   }
 
   ionViewDidLoad() {
@@ -66,7 +65,7 @@ export class UrgentPage {
         {
           text: 'Confirmer',
           handler: () => {
-            // callPolice();
+            callPolice();
             console.log('Agree clicked');
           }
         }
@@ -89,7 +88,7 @@ export class UrgentPage {
         {
           text: 'Confirmer',
           handler: () => {
-            // callPompier();
+            callPompier();
             console.log('Agree clicked');
           }
         }
@@ -112,7 +111,7 @@ export class UrgentPage {
         {
           text: 'Confirmer',
           handler: () => {
-            //callSAMU();
+            callSAMU();
             console.log('Agree clicked');
           }
         }
