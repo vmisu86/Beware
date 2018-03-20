@@ -65,7 +65,7 @@ export class UrgentPage {
         {
           text: 'Confirmer',
           handler: () => {
-            callPolice();
+            this.callPolice();
             console.log('Agree clicked');
           }
         }
@@ -88,7 +88,7 @@ export class UrgentPage {
         {
           text: 'Confirmer',
           handler: () => {
-            callPompier();
+            this.callPompier();
             console.log('Agree clicked');
           }
         }
@@ -111,7 +111,7 @@ export class UrgentPage {
         {
           text: 'Confirmer',
           handler: () => {
-            callSAMU();
+            this.callSAMU();
             console.log('Agree clicked');
           }
         }

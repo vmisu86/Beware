@@ -89,8 +89,6 @@
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
-    <engine name="android" spec="7.0.0" />
-    <engine name="browser" spec="5.0.3" />
     <plugin name="cordova-plugin-googlemaps" spec="^2.2.8">
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyD9ZpKiw0i-Ua7Tf-PZeeF2FhyRHoXK9WM" />
         <variable name="API_KEY_FOR_IOS" value="AIzaSyD9ZpKiw0i-Ua7Tf-PZeeF2FhyRHoXK9WM" />
@@ -98,4 +96,7 @@
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="24.1.0" />
     </plugin>
     <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
+    <allow-navigation href="http://192.168.6.69:8100" />
+    <engine name="android" spec="7.0.0" />
+    <engine name="browser" spec="5.0.3" />
 </widget>

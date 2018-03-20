@@ -27,6 +27,7 @@ import {HttpModule} from "@angular/http";
 import {SettingsPage} from "../pages/settings/settings";
 import {GoogleMaps} from "@ionic-native/google-maps";
 import {AlcoholPage} from "../pages/alcohol/alcohol";
+import {CallNumber} from "@ionic-native/call-number";
 
 console.log('api key: %s', keys[ 'googleMaps' ]);
 
