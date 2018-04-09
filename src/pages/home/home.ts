@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {LoadingController, ModalController} from 'ionic-angular';
+import {LoadingController, ModalController, ToastController} from 'ionic-angular';
 import {AddPlacePage} from "../add-place/add-place";
 import {Place} from "../../model/place";
 import {PlacesService} from "../../services/places";
@@ -9,8 +9,9 @@ import {ClassicPage} from "../classic/classic";
 import {WeatherPage} from "../weather/weather";
 import {WeatherProvider} from "../../providers/weather/weather";
 import {Storage} from "@ionic/storage";
-import {Geolocation} from "@ionic-native/geolocation";
+import {Geolocation, Geoposition} from "@ionic-native/geolocation";
 import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
+
 
 declare const google;
 
@@ -33,6 +34,7 @@ export class HomePage implements OnInit{
   addressFixe:string;
 
   @ViewChild('map') mapRef: ElementRef;
+
   //map: goog;
 	constructor(public modalCtrl: ModalController,
               private weatherProvider:WeatherProvider,
@@ -40,6 +42,7 @@ export class HomePage implements OnInit{
 	            private placesService: PlacesService,
               private geoCtrl: Geolocation,
               private loadingCtrl: LoadingController,
+              public geolocation: Geolocation,
               private nativeGeocoder: NativeGeocoder) {
 
 	}
@@ -48,22 +51,16 @@ export class HomePage implements OnInit{
 	  this.showMap();
   }
 
-  showMap(){
-	 //  const location = new google.maps.LatLng(43.690929, 7.237377);
-    //
-	 //  const options = {
-	 //    center: location,
-    //   zoom: 20,
-    //   mapTypeId: 'roadmap'
-    // };
-    // const map = new google.maps.Map(this.mapRef.nativeElement, options);
-    //
-    // //this.addMarker(location, map);
 
+
+  showMap(){
+    // this is the place by default
     let posNice = { lat: 43.690929, lng: 7.237377 }
     let map = new google.maps.Map(this.mapRef.nativeElement, {
       zoom: 12,
+      //the current position on the center
       center: posNice,
+      //the type of the map we can use Satelit or hybrid as well
       mapTypeId: 'roadmap'
     });
     let infoWindow = new google.maps.InfoWindow({ map: map });
@@ -99,12 +96,7 @@ export class HomePage implements OnInit{
     }
   }
 
-  // addMarker(position, map){
-	//   return new google.maps.Marker({
-  //     position,
-  //     map
-  //   });
-  // }
+
 
 
 	ngOnInit(){
