@@ -10,7 +10,7 @@ import {WeatherPage} from "../weather/weather";
 import {WeatherProvider} from "../../providers/weather/weather";
 import {Storage} from "@ionic/storage";
 import {Geolocation} from "@ionic-native/geolocation";
-import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
+import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
 
 declare const google;
 
