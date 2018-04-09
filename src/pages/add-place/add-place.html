@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-		<ion-title>Add a place</ion-title>
+		<ion-title>Ajouter une place</ion-title>
 	</ion-navbar>
 
 </ion-header>
@@ -16,16 +16,15 @@
 		<ion-list>
 
 			<ion-item>
-				<ion-label fixed>Title</ion-label>
+				<ion-label floating>Titre</ion-label>
 				<ion-input type="text"
-				           placeholder="What happend?"
 				           name="title"
 				           ngModel
 				           required></ion-input>
 			</ion-item>
 
 			<ion-item>
-				<ion-label floating>Short description</ion-label>
+				<ion-label floating>Description court</ion-label>
 				<ion-textarea
 						name="description"
 						ngModel
@@ -45,7 +44,7 @@
 					        icon-left
 					        (click)="onLocate()">
 						<ion-icon name="locate"></ion-icon>
-						Locate me
+						Mon location
 					</button>
 				</ion-col>
 
@@ -57,7 +56,7 @@
 					        icon-left
 					        (click)="onOpenMap()">
 						<ion-icon name="map"></ion-icon>
-						Select on Map
+						Selecter sur Carte
 					</button>
 				</ion-col>
 			</ion-row>
@@ -75,7 +74,7 @@
 			</ion-row>
 			<ion-row>
 				<ion-col text-center>
-					<h5>Take a photo!</h5>
+					<h5>Faire un photo!</h5>
 				</ion-col>
 			</ion-row>
 
@@ -88,7 +87,7 @@
 					        type="button"
 					        (click)="onTakePhoto()">
 						<ion-icon name="camera"></ion-icon>
-						Open Camera
+						Ouvre Camera
 					</button>
 				</ion-col>
 			</ion-row>
@@ -107,7 +106,7 @@
 					        type="submit"
                   [disabled]="!f.valid || !locationIsSet">
 					        <!--[disabled]="!f.valid || !locationIsSet || imageUrl==''">-->
-						Add this place
+						Ajouter cet endroit
 					</button>
 				</ion-col>
 			</ion-row>
