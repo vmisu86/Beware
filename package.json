@@ -24,6 +24,7 @@
     "@ionic-native/call-number": "^4.6.0",
     "@ionic-native/camera": "^4.5.3",
     "@ionic-native/core": "^4.5.3",
+    "@ionic-native/device-motion": "^4.6.0",
     "@ionic-native/file": "^4.5.3",
     "@ionic-native/geolocation": "^4.6.0",
     "@ionic-native/google-maps": "^4.6.3",
@@ -85,7 +86,8 @@
       "mx.ferreyra.callnumber": {},
       "cordova-plugin-nativegeocoder": {
         "LOCATION_WHEN_IN_USE_DESCRIPTION": "Use geocoder service"
-      }
+      },
+      "cordova-plugin-device-motion": {}
     },
     "platforms": [
       "android",
