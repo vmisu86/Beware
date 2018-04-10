@@ -94,13 +94,13 @@
     </plugin>
     <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
     <allow-navigation href="http://192.168.6.69:8100" />
-    <engine name="android" spec="7.0.0" />
-    <engine name="browser" spec="5.0.3" />
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
     <plugin name="cordova-plugin-nativegeocoder" spec="^3.1.1">
         <variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Use geocoder service" />
     </plugin>
-    <plugin name="cordova-plugin-device-motion" spec="~1.2.5" />
+    <plugin name="cordova-plugin-device-motion" spec="^1.2.5" />
+    <engine name="android" spec="7.0.0" />
+    <engine name="browser" spec="5.0.3" />
 </widget>

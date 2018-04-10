@@ -25,11 +25,13 @@ import {WeatherProvider} from "../providers/weather/weather";
 import {WeatherPage} from "../pages/weather/weather";
 import {HttpModule} from "@angular/http";
 import {SettingsPage} from "../pages/settings/settings";
-import {GoogleMaps} from "@ionic-native/google-maps";
+
 import {AlcoholPage} from "../pages/alcohol/alcohol";
 import {CallNumber} from "@ionic-native/call-number";
 import {NativeGeocoder} from "@ionic-native/native-geocoder";
 import {DeviceMotion} from "@ionic-native/device-motion";
+
+
 
 console.log('api key: %s', keys[ 'googleMaps' ]);
 
@@ -79,11 +81,11 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 		Camera,
 		PlacesService,
 		File,
-		{provide: ErrorHandler, useClass: IonicErrorHandler},
     WeatherProvider,
 		CallNumber,
     NativeGeocoder,
-    DeviceMotion
+    DeviceMotion,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
 	]
 })
 export class AppModule {
