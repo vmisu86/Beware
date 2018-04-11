@@ -33,9 +33,15 @@ export class HomePage implements OnInit{
     city:string,
     state:string
   }
-  address:string;
+  json:string;
+  countryCode:string;
+  countryName:string;
+  postalCode:string;
   city:string;
-  country:string;
+  street:string;
+  streetNumber:string;
+
+
 
   @ViewChild('map') mapRef: ElementRef;
 
@@ -71,8 +77,34 @@ export class HomePage implements OnInit{
     // Try HTML5 geolocation.
 
     this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
-      .then((result: NativeGeocoderReverseResult) => this.address = JSON.stringify(result))
+      .then((result: NativeGeocoderReverseResult) => this.json = JSON.stringify(result))
       .catch((error: any) => console.log(error));
+
+    this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+      .then((result2: NativeGeocoderReverseResult) => this.countryCode = result2[0].countryCode)
+      .catch((error: any) => console.log(error));
+
+    this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+      .then((result2: NativeGeocoderReverseResult) => this.countryName = result2[0].countryName)
+      .catch((error: any) => console.log(error));
+
+    this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+      .then((result2: NativeGeocoderReverseResult) => this.postalCode = result2[0].postalCode)
+      .catch((error: any) => console.log(error));
+
+    this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+      .then((result2: NativeGeocoderReverseResult) => this.city = result2[0].locality)
+      .catch((error: any) => console.log(error));
+
+    this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+      .then((result2: NativeGeocoderReverseResult) => this.street = result2[0].thoroughfare)
+      .catch((error: any) => console.log(error));
+
+    this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+      .then((result2: NativeGeocoderReverseResult) => this.streetNumber = result2[0].subThoroughfare)
+      .catch((error: any) => console.log(error));
+
+
 
 
 
@@ -83,11 +115,35 @@ export class HomePage implements OnInit{
           lng: position.coords.longitude
         };
         infoWindow.setPosition(pos);
-        infoWindow.setContent('You\'re here! ');
+        infoWindow.setContent(this.streetNumber+' '+this.street+'-'+this.city);
 
 
-        this.nativeGeocoder.reverseGeocode(pos.lat, pos.lng)
-          .then((result: NativeGeocoderReverseResult) => this.address = JSON.stringify(result))
+        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+          .then((result: NativeGeocoderReverseResult) => this.json = JSON.stringify(result))
+          .catch((error: any) => console.log(error));
+
+        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+          .then((result2: NativeGeocoderReverseResult) => this.countryCode = result2[0].countryCode)
+          .catch((error: any) => console.log(error));
+
+        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+          .then((result2: NativeGeocoderReverseResult) => this.countryName = result2[0].countryName)
+          .catch((error: any) => console.log(error));
+
+        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+          .then((result2: NativeGeocoderReverseResult) => this.postalCode = result2[0].postalCode)
+          .catch((error: any) => console.log(error));
+
+        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+          .then((result2: NativeGeocoderReverseResult) => this.city = result2[0].locality)
+          .catch((error: any) => console.log(error));
+
+        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+          .then((result2: NativeGeocoderReverseResult) => this.street = result2[0].thoroughfare)
+          .catch((error: any) => console.log(error));
+
+        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+          .then((result2: NativeGeocoderReverseResult) => this.streetNumber = result2[0].subThoroughfare)
           .catch((error: any) => console.log(error));
 
 
@@ -131,8 +187,8 @@ export class HomePage implements OnInit{
         this.location = JSON.parse(val);
       } else {
         this.location = {
-          city: 'Nice',
-          state: 'France'
+          city: this.city,
+          state: this.countryName
         }
       }
 
