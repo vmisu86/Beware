@@ -35,7 +35,7 @@ import {Secu1Page} from "../pages/secu1/secu1";
 import {TextToSpeech} from "@ionic-native/text-to-speech";
 import {Secu2Page} from "../pages/secu2/secu2";
 import {Secu3Page} from "../pages/secu3/secu3";
-import {NgProgressModule} from "ngx-progressbar";
+import {NgProgressModule} from "ng2-progressbar";
 
 
 
