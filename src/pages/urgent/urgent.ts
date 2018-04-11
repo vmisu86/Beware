@@ -6,6 +6,7 @@ import {Secu1Page} from "../secu1/secu1";
 import {Secu2Page} from "../secu2/secu2";
 import {Secu3Page} from "../secu3/secu3";
 
+
 /**
  * Generated class for the UrgentPage page.
  *
@@ -21,7 +22,7 @@ import {Secu3Page} from "../secu3/secu3";
 export class UrgentPage {
   secu1Page = Secu1Page;
   secu2Page = Secu2Page;
-  secu3Page = Secu3Page;
+  secu3Page = Secu3Page
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
