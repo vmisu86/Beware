@@ -31,11 +31,6 @@ import {AlcoholPage} from "../pages/alcohol/alcohol";
 import {CallNumber} from "@ionic-native/call-number";
 import {NativeGeocoder} from "@ionic-native/native-geocoder";
 import {DeviceMotion} from "@ionic-native/device-motion";
-import {Secu1Page} from "../pages/secu1/secu1";
-import {TextToSpeech} from "@ionic-native/text-to-speech";
-import {Secu2Page} from "../pages/secu2/secu2";
-import {Secu3Page} from "../pages/secu3/secu3";
-import {NgProgressModule} from "ng2-progressbar";
 
 
 
@@ -56,15 +51,11 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
     WeatherPage,
 		AlcoholPage,
     SettingsPage,
-    SensorPage,
-    Secu1Page,
-    Secu2Page,
-    Secu3Page
+    SensorPage
 	],
 	imports: [
 		BrowserModule,
     HttpModule,
-    NgProgressModule,
 		IonicModule.forRoot(MyApp),
 		IonicStorageModule.forRoot(),
 		AgmCoreModule.forRoot({apiKey: keys[ 'googleMaps' ]})
@@ -84,10 +75,7 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
     WeatherPage,
 		AlcoholPage,
     SettingsPage,
-    SensorPage,
-    Secu1Page,
-    Secu2Page,
-    Secu3Page
+    SensorPage
 	],
 	providers: [
 		StatusBar,
@@ -100,7 +88,6 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 		CallNumber,
     NativeGeocoder,
     DeviceMotion,
-    TextToSpeech,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
 	]
 })
