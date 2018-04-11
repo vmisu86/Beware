@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Tests d'aptitudes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Test Sensor
+    </ion-list-header>
+      <ion-card>
+        <ion-card-content  class="card-home-last">
+          Tenez votre téléphone dans une posistion et marchez pendant
+          quelques mètres en conservant cette meme position le plus
+          longtemps possible.
+        </ion-card-content>
+      </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button block [color]="buttonColor" (click)="startWatching()">
+            Commencer
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item>
+      <h2>X: {{deltaX}}</h2>
+      <h2>Y: {{deltaY}}</h2>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
