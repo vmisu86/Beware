@@ -11,6 +11,13 @@ import {AboutPage} from "../pages/about/about";
 import {ClassicPage} from "../pages/classic/classic";
 import {UrgentPage} from "../pages/urgent/urgent";
 
+export interface PageInterface {
+  title:string;
+  pageName: string;
+  component?: any;
+  index?:number;
+  icon: string;
+}
 
 @Component({
 	templateUrl: 'app.html'
@@ -18,8 +25,15 @@ import {UrgentPage} from "../pages/urgent/urgent";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 	rootPage: any = TabsPage;
+  pages: PageInterface[] = [
+      { title: 'Home',pageName:'TabsPage', component: HomePage,index:0, icon: "home"},
+      // { title: 'Help', component: UrgentPage, icon: "medkit" },
+      { title: 'Begin',pageName:'TabsPage', component: ClassicPage,index:1, icon: "car" },
+      { title: 'Weather',pageName:'TabsPage',component: WeatherPage,index:2, icon: "cloudy-night" },
+      { title: 'Incident',pageName:'TabsPage', component: AddPlacePage,index:3, icon: "add-circle"}
+  ]
 
-	pages: Array<{title: string, component: any, icon: string}>;
+	//pages: Array<{title: string,pageName:string, component: any,index?:any, icon: string}>;
 
 	// constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 	// 	platform.ready().then(() => {
@@ -34,13 +48,13 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage, icon: "home"},
-      // { title: 'Help', component: UrgentPage, icon: "medkit" },
-      { title: 'Begin', component: ClassicPage, icon: "car" },
-      { title: 'Weather', component: WeatherPage, icon: "cloudy-night" },
-      { title: 'Incident', component: AddPlacePage, icon: "add-circle"}
-    ];
+    // this.pages = [
+    //   { title: 'Home',pageName:'TabsPage', component: HomePage,index:0, icon: "home"},
+    //   // { title: 'Help', component: UrgentPage, icon: "medkit" },
+    //   { title: 'Begin',pageName:'TabsPage', component: ClassicPage,index:1, icon: "car" },
+    //   { title: 'Weather',pageName:'TabsPage',component: WeatherPage,index:2, icon: "cloudy-night" },
+    //   { title: 'Incident',pageName:'TabsPage', component: AddPlacePage,index:3, icon: "add-circle"}
+    // ];
 
   }
 
@@ -54,9 +68,29 @@ export class MyApp {
     });
   }
 
+
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    let params = {};
+    if(page.index){
+      params = {tabIndex: page.index};
+    }
+    if(this.nav.getActiveChildNav() && page.index != undefined){
+      this.nav.getActiveChildNav().select(page.index);
+    }else{
+      this.nav.setRoot(page.pageName, params);
+    }
+
+  }
+
+  isActive(page: PageInterface){
+    let childNav = this.nav.getActiveChildNav();
+    if (childNav){
+      if(childNav.getSelected() && childNav.getSelected().root === page.component){
+        return 'primary';
+      }
+      return;
+    }
   }
 }

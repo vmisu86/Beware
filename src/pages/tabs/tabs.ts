@@ -7,6 +7,7 @@ import {WeatherPage} from "../weather/weather";
 import {AddPlacePage} from "../add-place/add-place";
 import {ClassicPage} from "../classic/classic";
 import {UrgentPage} from "../urgent/urgent";
+import {NavController, NavParams} from "ionic-angular";
 
 @Component({
   templateUrl: 'tabs.html'
@@ -18,8 +19,10 @@ export class TabsPage {
   tab3Root = ClassicPage;
   tab4Root = WeatherPage;
   tab5Root = AddPlacePage;
+  myIndex: number;
 
-  constructor() {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.myIndex = navParams.data.tabIndex || 0;
   }
+
 }

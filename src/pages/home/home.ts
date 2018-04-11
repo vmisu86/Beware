@@ -26,6 +26,7 @@ export class HomePage implements OnInit{
 	urgentPage = UrgentPage;
 	classicPage = ClassicPage;
 	weatherPage = WeatherPage;
+  homePage = HomePage;
 
 	places: Place[] = [];
   weather:any;
