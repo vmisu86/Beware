@@ -17,17 +17,51 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content fullscreen>
   <ion-grid>
     <ion-row>
-      <ion-card>
-        <div #map id="map"></div>
+
+      <!-----------------------------THE MAP CARD--------------------------------->
+      <ion-card class="map-ion-card">
+
+          <ion-row *ngIf="weather">
+            <ion-col col-5>
+              <p class="location">{{weather.display_location.full}}</p>
+            </ion-col>
+            <ion-col col-2>
+              <img class="icon" src="{{weather.icon_url}}" alt="">
+            </ion-col>
+            <ion-col col-3>
+              <p class="desc">{{weather.weather}}</p>
+            </ion-col>
+            <ion-col col-2>
+              <p class="temp">{{weather.temp_c}}&deg;</p>
+            </ion-col>
+          </ion-row>
+
+          <div #map id="map"></div>
+
+
       </ion-card>
+    </ion-row>
+<!--------------------------THE EMERGENCY BUTTONS AND THE CLASSIC BUTTON---------------------->
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button color="danger" icon-start (click)="lunchUrgentPage()">
+          <ion-icon name='medkit' is-active="false"></ion-icon>
+          Emergency
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="secondary" icon-start [navPush]="classicPage">
+          <ion-icon name='car' is-active="false"></ion-icon>
+          Get Started
+        </button>
+      </ion-col>
     </ion-row>
 
 <!--<ion-row>-->
   <!--<ion-card>-->
-   <!--<p>JSON: {{json}}</p>-->
   <!--<p>CountryCode:{{countryCode}}</p>-->
     <!--<p>CountryName: {{countryName}}</p>-->
     <!--<p>PostalCode: {{postalCode}}</p>-->
@@ -36,58 +70,30 @@
     <!--<p>StreetNumber: {{streetNumber}}</p>-->
   <!--</ion-card>-->
 <!--</ion-row>-->
-    <ion-row>
-    <ion-card>
-      <ion-card-header>
-        Weather
-      </ion-card-header>
-      <ion-card-content>
-        <ion-row *ngIf="weather">
-          <ion-col width-50 offset-25>
-            <h2 class="location">{{weather.display_location.full}}</h2>
-          </ion-col>
-          <ion-col>
-            <div class="icon"><img src="{{weather.icon_url}}" alt=""></div>
-          </ion-col>
-          <ion-col>
-            <h3 class="desc">{{weather.weather}}</h3>
-          </ion-col>
-          <ion-col>
-            <h1 class="temp">{{weather.temp_c}}&deg;</h1>
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
-    </ion-row>
-    <ion-row text-center>
-      <ion-col>
-				<button ion-button color="danger" icon-start [navPush]="urgentPage">
-		      <ion-icon name='medkit' is-active="false"></ion-icon>
-		      Emergency
-		    </button>
-        <!-- <button ion-button
-                icon-right
-                type="button"
-                color="danger"
-                [navPush]="urgentPage"
+    <!--<ion-row>-->
+    <!--<ion-card>-->
+      <!--<ion-card-header>-->
+        <!--Weather-->
+      <!--</ion-card-header>-->
+      <!--<ion-card-content>-->
+        <!--<ion-row *ngIf="weather">-->
+          <!--<ion-col width-50 offset-25>-->
+            <!--<h2 class="location">{{weather.display_location.full}}</h2>-->
+          <!--</ion-col>-->
+          <!--<ion-col>-->
+            <!--<div class="icon"><img src="{{weather.icon_url}}" alt=""></div>-->
+          <!--</ion-col>-->
+          <!--<ion-col>-->
+            <!--<h3 class="desc">{{weather.weather}}</h3>-->
+          <!--</ion-col>-->
+          <!--<ion-col>-->
+            <!--<h1 class="temp">{{weather.temp_c}}&deg;</h1>-->
+          <!--</ion-col>-->
+        <!--</ion-row>-->
+      <!--</ion-card-content>-->
+    <!--</ion-card>-->
+    <!--</ion-row>-->
 
-				>Urgent</button> -->
-      </ion-col>
-      <ion-col>
-				<button ion-button color="secondary" icon-start [navPush]="classicPage">
-					<ion-icon name='car' is-active="false"></ion-icon>
-					Get Started
-				</button>
-      <!-- <button ion-button
-              icon-right
-              type="button"
-              color="secondary"
-              [navPush]="classicPage">
-			<ion-icon name="car"></ion-icon>
-			Classic
-			</button> -->
-      </ion-col>
-    </ion-row>
     <ion-row>
 				<ion-card>
 
@@ -100,10 +106,6 @@
 				  </ion-card-content>
 
 					<ion-card-content  class="card-home-last">
-						<!-- <button ion-button outline item-end>
-			        <ion-icon item-start name="share-alt"></ion-icon>
-							full details
-			      </button> -->
 						<ion-item>
 							<button ion-button clear verysmall item-end icon-start [navPush]="weatherPage">
 			          <ion-icon name='share-alt'></ion-icon>
@@ -118,17 +120,6 @@
   </ion-grid>
 
 
-
-	<!--<ion-card *ngFor="let place of places; let i = index"-->
-	          <!--(click)="onOpenPlace(place, i)">-->
-		<!--<img id="main_list_image" [src]="place.imageUrl">-->
-		<!--<ion-card-content text-center>-->
-			<!--<ion-card-title>-->
-				<!--{{ place.title }}-->
-			<!--</ion-card-title>-->
-			<!--<p>{{ place.description }}</p>-->
-		<!--</ion-card-content>-->
-	<!--</ion-card>-->
 
   <ion-card *ngFor="let place of places; let i = index"
             (click)="onOpenPlace(place, i)">

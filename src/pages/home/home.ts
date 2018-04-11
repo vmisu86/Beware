@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {LoadingController, ModalController, ToastController} from 'ionic-angular';
+import {LoadingController, ModalController, NavController, NavParams, Tabs, ToastController} from 'ionic-angular';
 import {AddPlacePage} from "../add-place/add-place";
 import {Place} from "../../model/place";
 import {PlacesService} from "../../services/places";
@@ -47,6 +47,8 @@ export class HomePage implements OnInit{
 
   //map: goog;
 	constructor(public modalCtrl: ModalController,
+              public navCtrl: NavController,
+              public navParams: NavParams,
               private weatherProvider:WeatherProvider,
               private storage:Storage,
 	            private placesService: PlacesService,
@@ -61,6 +63,18 @@ export class HomePage implements OnInit{
 	  this.showMap();
   }
 
+  lunchUrgentPage(){
+	  console.log("clicked");
+	  let data = {
+	    countryCode: this.countryCode,
+      countryName: this.countryName,
+      postalCode: this.postalCode,
+      city: this.city,
+      street: this.street,
+      streetNumber: this.streetNumber
+    };
+	  this.navCtrl.push(UrgentPage, data);
+  }
 
 
   showMap(){

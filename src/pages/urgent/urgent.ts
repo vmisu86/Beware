@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { CallNumber } from '@ionic-native/call-number';
+import {Secu1Page} from "../secu1/secu1";
+import {Secu2Page} from "../secu2/secu2";
+import {Secu3Page} from "../secu3/secu3";
 
 /**
  * Generated class for the UrgentPage page.
@@ -16,11 +19,31 @@ import { CallNumber } from '@ionic-native/call-number';
   templateUrl: 'urgent.html',
 })
 export class UrgentPage {
+  secu1Page = Secu1Page;
+  secu2Page = Secu2Page;
+  secu3Page = Secu3Page;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public alertCtrl: AlertController,
               private callNumber: CallNumber) {
+    this.countryCode = navParams.get('id');
+  }
+
+  countryCode:string;
+  countryName:string;
+  postalCode:string;
+  city:string;
+  street:string;
+  streetNumber:string;
+
+  ionViewDidLoad() {
+    this.countryCode = this.navParams.get('countryCode');
+    this.countryName = this.navParams.get('countryName');
+    this.postalCode = this.navParams.get('postalCode');
+    this.city = this.navParams.get('city');
+    this.street = this.navParams.get('street');
+    this.streetNumber = this.navParams.get('streetNumber');
   }
 
   callPolice() {
@@ -47,9 +70,6 @@ export class UrgentPage {
     .catch(err => console.log('Error launching dialer', err));
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UrgentPage');
-  }
 
   showConfirmPolice() {
     let confirm = this.alertCtrl.create({

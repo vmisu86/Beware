@@ -42,6 +42,20 @@
       </button>
     </ion-item>
   </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-row>
+      <ion-card>
+      <p>CountryCode:{{countryCode}}</p>
+      <p>CountryName: {{countryName}}</p>
+      <p>PostalCode: {{postalCode}}</p>
+      <p>City: {{city}}</p>
+      <p>Street: {{street}}</p>
+      <p>StreetNumber: {{streetNumber}}</p>
+      </ion-card>
+      </ion-row>
+    </ion-item>
+  </ion-list>
 
   <ion-list>
     <ion-list-header>
@@ -50,21 +64,21 @@
     <ion-item>
       <ion-badge item-start color="dark" outline>1</ion-badge>
       Sécurité pour tous
-      <button ion-button outline item-end icon-only color="dark">
+      <button ion-button outline item-end icon-only color="dark" [navPush]="secu1Page">
         <ion-icon name="arrow-forward"></ion-icon>
       </button>
     </ion-item>
     <ion-item>
       <ion-badge item-start color="dark" outline>2</ion-badge>
       Inconscience
-      <button ion-button outline item-end icon-only color="dark">
+      <button ion-button outline item-end icon-only color="dark" [navPush]="secu2Page">
         <ion-icon name="arrow-forward"></ion-icon>
       </button>
     </ion-item>
     <ion-item>
       <ion-badge item-start color="dark" outline>3</ion-badge>
       Saignement
-      <button ion-button outline item-end icon-only color="dark">
+      <button ion-button outline item-end icon-only color="dark" [navPush]="secu3Page">
         <ion-icon name="arrow-forward"></ion-icon>
       </button>
     </ion-item>

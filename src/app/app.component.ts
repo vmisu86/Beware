@@ -36,13 +36,14 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage, icon: "home"},
-      { title: 'Help', component: UrgentPage, icon: "medkit" },
+      // { title: 'Help', component: UrgentPage, icon: "medkit" },
       { title: 'Begin', component: ClassicPage, icon: "car" },
       { title: 'Weather', component: WeatherPage, icon: "cloudy-night" },
       { title: 'Incident', component: AddPlacePage, icon: "add-circle"}
     ];
 
   }
+
 
   initializeApp() {
     this.platform.ready().then(() => {
