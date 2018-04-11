@@ -13,6 +13,7 @@ import {Geolocation, Geoposition} from "@ionic-native/geolocation";
 import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
 
 
+
 declare const google;
 
 
@@ -25,13 +26,16 @@ export class HomePage implements OnInit{
 	urgentPage = UrgentPage;
 	classicPage = ClassicPage;
 	weatherPage = WeatherPage;
+
 	places: Place[] = [];
   weather:any;
   location:{
     city:string,
     state:string
   }
-  addressFixe:string;
+  address:string;
+  city:string;
+  country:string;
 
   @ViewChild('map') mapRef: ElementRef;
 
@@ -55,7 +59,7 @@ export class HomePage implements OnInit{
 
   showMap(){
     // this is the place by default
-    let posNice = { lat: 43.690929, lng: 7.237377 }
+    let posNice = { lat: 43.6871966, lng: 7.2266771 }
     let map = new google.maps.Map(this.mapRef.nativeElement, {
       zoom: 12,
       //the current position on the center
@@ -64,8 +68,11 @@ export class HomePage implements OnInit{
       mapTypeId: 'roadmap'
     });
     let infoWindow = new google.maps.InfoWindow({ map: map });
-    this.addressFixe = "Antibes"
     // Try HTML5 geolocation.
+
+    this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+      .then((result: NativeGeocoderReverseResult) => this.address = JSON.stringify(result))
+      .catch((error: any) => console.log(error));
 
 
 
@@ -78,9 +85,13 @@ export class HomePage implements OnInit{
         infoWindow.setPosition(pos);
         infoWindow.setContent('You\'re here! ');
 
+
         this.nativeGeocoder.reverseGeocode(pos.lat, pos.lng)
-          .then((result: NativeGeocoderReverseResult) => this.addressFixe = JSON.stringify(result))
+          .then((result: NativeGeocoderReverseResult) => this.address = JSON.stringify(result))
           .catch((error: any) => console.log(error));
+
+
+
 
         let marker = new google.maps.Marker({
           position: pos,
@@ -137,6 +148,7 @@ export class HomePage implements OnInit{
       'Error: The Geolocation service failed.' :
       'Error: Your browser doesn\'t support geolocation.');
   }
+
 
 
 }

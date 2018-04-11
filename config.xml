@@ -100,11 +100,7 @@
     <plugin name="cordova-plugin-nativegeocoder" spec="^3.1.1">
         <variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Use geocoder service" />
     </plugin>
-<<<<<<< HEAD
-    <plugin name="cordova-plugin-device-motion" spec="~1.2.5" />
-=======
     <plugin name="cordova-plugin-device-motion" spec="^1.2.5" />
->>>>>>> c44b3ae0c5f3437bf45673dfbc7bc4b14a608a42
     <engine name="android" spec="7.0.0" />
     <engine name="browser" spec="5.0.3" />
 </widget>
