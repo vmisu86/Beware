@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {DeviceMotion, DeviceMotionAccelerationData} from '@ionic-native/device-motion';
+import {NgProgressService} from "ng2-progressbar";
 
 /**
  * Generated class for the SensorPage page.
@@ -25,17 +26,29 @@ export class SensorPage {
   private subscription:any;
   private buttonColor:string = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private deviceMotion: DeviceMotion) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private deviceMotion: DeviceMotion,
+              private barService : NgProgressService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SensorPage');
   }
 
+  runBar(){
+    this.barService.start();
+    setTimeout(()=>{
+      this.barService.done();
+      this.stopWatching();
+    },20000);
+  }
+
   startWatching(){
     // Watch device acceleration
     this.buttonColor="beer";
     this.subscription = this.deviceMotion.watchAcceleration({frequency:1000}).subscribe((acc: DeviceMotionAccelerationData) => {
+        this.runBar();
         console.log(acc);
         if(!this.lastX) {
           this.lastX = acc.x;

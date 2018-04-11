@@ -31,7 +31,7 @@ import {AlcoholPage} from "../pages/alcohol/alcohol";
 import {CallNumber} from "@ionic-native/call-number";
 import {NativeGeocoder} from "@ionic-native/native-geocoder";
 import {DeviceMotion} from "@ionic-native/device-motion";
-
+import {NgProgressModule} from "ng2-progressbar";
 
 
 console.log('api key: %s', keys[ 'googleMaps' ]);
@@ -56,6 +56,7 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 	imports: [
 		BrowserModule,
     HttpModule,
+    NgProgressModule,
 		IonicModule.forRoot(MyApp),
 		IonicStorageModule.forRoot(),
 		AgmCoreModule.forRoot({apiKey: keys[ 'googleMaps' ]})
