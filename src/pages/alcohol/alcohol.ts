@@ -15,11 +15,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AlcoholPage {
 
+  sexe:number;
+  poids:number;
+  niveau:number;
+  volume:number;
+  heurePasser:number;
+  BAC: number;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlcoholPage');
+    console.log(this.BAC);
+  }
+
+  calcule(){
+    this.BAC = ((this.volume/this.niveau) * 5.14/this.poids * this.sexe) - .015 * this.heurePasser;
+    console.log(this.BAC);
   }
 
 }
