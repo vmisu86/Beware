@@ -104,4 +104,5 @@
     <plugin name="cordova-plugin-tts" spec="^0.2.3" />
     <engine name="android" spec="7.0.0" />
     <engine name="browser" spec="5.0.3" />
+    <allow-navigation href="http://192.168.6.102:8100" />
 </widget>

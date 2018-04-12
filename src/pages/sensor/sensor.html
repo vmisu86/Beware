@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Tests d'aptitudes
+      Test d'aptitudes
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,7 +9,7 @@
 <ion-content padding>
   <ion-list>
     <ion-list-header>
-      Test Sensor
+      Test d'aptitudes
     </ion-list-header>
       <ion-card>
         <ion-card-content  class="card-home-last">
@@ -29,14 +29,35 @@
     </ion-grid>
 
     <ion-item>
-      <h2>X: {{deltaX}}</h2>
-      <h2>Y: {{deltaY}}</h2>
+      <ion-row>
+          Variation sur X : {{workoutProgressNumX-50}}
+          <div class="progress-bar">
+            <span [style.width]="workoutProgressX" [style.background-color]="buttonColorX">{{messageProgressX}}</span>
+          </div>
+      </ion-row>
+
+      <ion-row>
+          Variation sur Y : {{workoutProgressNumY-50}}
+          <div class="progress-bar">
+            <span [style.width]="workoutProgressY" [style.background-color]="buttonColorY">{{messageProgressY}}</span>
+          </div>
+      </ion-row>
     </ion-item>
 
     <ion-item>
-      <ng-progress [thick]="true" [ease]="'easeInOutSine'" [showSpinner]="true" class="progress-inner">
+      <ng-progress [thick]="true" [ease]="'easeInQuart'" [showSpinner]="true" class="progress-inner">
       </ng-progress>
     </ion-item>
+
+    <ion-card>
+      <ion-card-header>
+        Etat : {{messageHead}}
+      </ion-card-header>
+
+      <ion-card-content class="card-home-last">
+        {{messageBody}} Un mauvais équilibre peut traduire un état de fatigue et/ou qui ne convient pas pour un trajet automobile.
+      </ion-card-content>
+    </ion-card>
 
   </ion-list>
 
