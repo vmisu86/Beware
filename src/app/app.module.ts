@@ -37,6 +37,7 @@ import {Secu2Page} from "../pages/secu2/secu2";
 import {Secu3Page} from "../pages/secu3/secu3";
 import {NgProgressModule} from "ng2-progressbar";
 import {TextToSpeech} from "@ionic-native/text-to-speech";
+import {ResultPage} from "../pages/result/result";
 
 
 
@@ -61,7 +62,8 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
     ReactionPage,
     Secu1Page,
     Secu2Page,
-    Secu3Page
+    Secu3Page,
+    ResultPage
 	],
 	imports: [
 		BrowserModule,
@@ -90,7 +92,8 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
     ReactionPage,
     Secu1Page,
     Secu2Page,
-    Secu3Page
+    Secu3Page,
+    ResultPage
 	],
 	providers: [
 		StatusBar,

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AlertController, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
+import {UrgentPage} from "../urgent/urgent";
+import {ResultPage} from "../result/result";
 
 /**
  * Generated class for the AlcoholPage page.
@@ -21,7 +23,7 @@ export class AlcoholPage {
   volume:number;
   heurePasser:number;
   BAC: number;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -30,8 +32,19 @@ export class AlcoholPage {
   }
 
   calcule(){
-    this.BAC = ((this.volume/this.niveau) * 5.14/this.poids * this.sexe) - .015 * this.heurePasser;
-    console.log(this.BAC);
+    let cons =(this.volume*(this.niveau/100)*0.8);
+    let demol=(this.sexe*this.heurePasser*0.85);
+    this.BAC = ((cons-demol)/this.poids);
+
+
+
+    let data = {
+      bac: this.BAC.toFixed(2)
+    };
+
+    this.navCtrl.push(ResultPage, data);
+
+
   }
 
 }
