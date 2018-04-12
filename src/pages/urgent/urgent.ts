@@ -49,7 +49,7 @@ export class UrgentPage {
 
   callPolice() {
     try {
-      this.callNumber.callNumber("0785924985", true)
+      this.callNumber.callNumber("+33785924985", true)
       .then(res => console.log('Launched dialer!', res))
       .catch(err => console.log('Error launching dialer', err));
     }
@@ -60,13 +60,13 @@ export class UrgentPage {
   }
 
   callPompier() {
-    this.callNumber.callNumber("001800", true)
+    this.callNumber.callNumber("18", true)
     .then(res => console.log('Launched dialer!', res))
     .catch(err => console.log('Error launching dialer', err));
   }
 
   callSAMU() {
-    this.callNumber.callNumber("001500", true)
+    this.callNumber.callNumber("15", true)
     .then(res => console.log('Launched dialer!', res))
     .catch(err => console.log('Error launching dialer', err));
   }

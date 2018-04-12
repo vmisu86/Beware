@@ -49,50 +49,16 @@
       <ion-col>
         <button ion-button color="danger" icon-start (click)="lunchUrgentPage()">
           <ion-icon name='medkit' is-active="false"></ion-icon>
-          Emergency
+         Urgence
         </button>
       </ion-col>
       <ion-col>
         <button ion-button color="secondary" icon-start [navPush]="classicPage">
           <ion-icon name='car' is-active="false"></ion-icon>
-          Get Started
+          Départ
         </button>
       </ion-col>
     </ion-row>
-
-<!--<ion-row>-->
-  <!--<ion-card>-->
-  <!--<p>CountryCode:{{countryCode}}</p>-->
-    <!--<p>CountryName: {{countryName}}</p>-->
-    <!--<p>PostalCode: {{postalCode}}</p>-->
-    <!--<p>City: {{city}}</p>-->
-    <!--<p>Street: {{street}}</p>-->
-    <!--<p>StreetNumber: {{streetNumber}}</p>-->
-  <!--</ion-card>-->
-<!--</ion-row>-->
-    <!--<ion-row>-->
-    <!--<ion-card>-->
-      <!--<ion-card-header>-->
-        <!--Weather-->
-      <!--</ion-card-header>-->
-      <!--<ion-card-content>-->
-        <!--<ion-row *ngIf="weather">-->
-          <!--<ion-col width-50 offset-25>-->
-            <!--<h2 class="location">{{weather.display_location.full}}</h2>-->
-          <!--</ion-col>-->
-          <!--<ion-col>-->
-            <!--<div class="icon"><img src="{{weather.icon_url}}" alt=""></div>-->
-          <!--</ion-col>-->
-          <!--<ion-col>-->
-            <!--<h3 class="desc">{{weather.weather}}</h3>-->
-          <!--</ion-col>-->
-          <!--<ion-col>-->
-            <!--<h1 class="temp">{{weather.temp_c}}&deg;</h1>-->
-          <!--</ion-col>-->
-        <!--</ion-row>-->
-      <!--</ion-card-content>-->
-    <!--</ion-card>-->
-    <!--</ion-row>-->
 
     <ion-row>
 				<ion-card>
@@ -102,14 +68,14 @@
 				  </ion-card-header>
 
 				  <ion-card-content  class="card-home-last">
-				    Your security our first priority, try to be careful! Check the conditions before your trip.
+            Votre sécurité est notre prioritée, tachez d'être prudent sur la route. Verifiez les conditions météos avant de prendre la route.
 				  </ion-card-content>
 
 					<ion-card-content  class="card-home-last">
 						<ion-item>
 							<button ion-button clear verysmall item-end icon-start [navPush]="weatherPage">
 			          <ion-icon name='share-alt'></ion-icon>
-			          Full Details
+			          Détails
 			        </button>
 						</ion-item>
 
