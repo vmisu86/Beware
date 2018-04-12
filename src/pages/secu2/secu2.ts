@@ -21,7 +21,10 @@ export class Secu2Page {
   locale:string;
 
   constructor(private tts:TextToSpeech ,public navCtrl: NavController, public navParams: NavParams) {
-    this.text = ' En psychanalyse, le concept de l\'Inconscient, au sens descriptif, désigne les contenus (représentants de la pulsion), régis par les processus primaires, et inaccessibles au champ actuel de la conscience. Au sens topique, l\'inconscient désigne un des trois systèmes (Inc/Prec/Cons) de l\'appareil psychique constitué de contenus refoulés à la suite de l’action du refoulement1.';
+    this.text = 'En cas de perte de connaissance : Allongez la personne sur le sol' +
+                'Retirez ou desserez tout vêtement serré' +
+                'Si vous le pouvez, basculez en arrière la tête de la personne et ' +
+                'placez-la en position latérale de sécurité ; ';
     this.locale = 'fr-FR';
     this.rate = 10;
   }

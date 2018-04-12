@@ -22,7 +22,16 @@ export class Secu1Page {
 
 
   constructor(private tts:TextToSpeech ,public navCtrl: NavController, public navParams: NavParams) {
-    this.text = 'Des plans d\'opérations ont été présentés à Emmanuel Macron par les chefs militaires dans l\'éventualité où la France s\'associerait à des frappes contre Bachar al-Assad.';
+    this.text = 'Signalez-vous et protégez vos passagers,' +
+                'Enfilez un gilet rétro-réfléchissant,' +
+                'sortez de la voiture et faites sortir vos passagers  ' +
+                'Veillez à couper le contact des véhicules accidentés et à serrer le frein à main.' +
+                'Éclairez les véhicules accidentés la nuit ' +
+                'Alerter les secours et renseignez leurs type et nombre de véhicules accidentés,' +
+                'circonstances de l’accident, nombre et état apparent les blessés ' +
+                'Secourir les blessés en desserant les vêtements, en les couvrants' +
+                'Retirez de leurs bouches tous les corps étrangers ' +
+                'Et pratiquez les gestes de premiers secours si vous en avez les compétences.';
     this.locale = 'fr-FR';
     this.rate = 10;
   }

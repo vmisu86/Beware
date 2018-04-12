@@ -21,7 +21,14 @@ export class Secu3Page {
   locale:string;
 
   constructor(private tts:TextToSpeech ,public navCtrl: NavController, public navParams: NavParams) {
-    this.text = 'Perdre du sang. Saigner abondamment, à peine, à flots, de toutes les blessures, sous les coups; blessure, coupure, ulcération qui saigne; lésion indolore qui saigne facilement; (comprimer des varices et les) empêcher de saigner.';
+    this.text ='En cas de saignement,' +
+               ' Evitez, si possible, tout contact avec le sang de la victime ;' +
+                ' demandez-lui de comprimer elle-même sa blessure.' +
+                'Sinon, exercez une pression directement sur la plaie avec vos mains protégées ' +
+                'Allongez la victime en position horizontale.' +
+                'Demandez à une personne présente d\'alerter les secours ' +
+                'ou faites-le vous-même si vous êtes seul.' +
+                'Poursuivez la compression sur la plaie jusqu\'à l\'arrivée des secours.';
     this.locale = 'fr-FR';
     this.rate = 10;
   }
