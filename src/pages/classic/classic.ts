@@ -7,6 +7,7 @@ import {WeatherProvider} from "../../providers/weather/weather";
 import {Storage} from "@ionic/storage";
 import {AlcoholPage} from "../alcohol/alcohol";
 import {SensorPage} from "../sensor/sensor";
+import {ReactionPage} from "../reaction/reaction";
 
 /**
  * Generated class for the ClassicPage page.
@@ -24,6 +25,7 @@ export class ClassicPage {
 
   alcoholPage = AlcoholPage;
   sensorPage = SensorPage;
+  reactionPage = ReactionPage;
 	places: Place[] = [];
   location:{
     city:string,

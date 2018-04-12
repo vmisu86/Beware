@@ -24,6 +24,7 @@ import {ClassicPage} from "../pages/classic/classic";
 import {WeatherProvider} from "../providers/weather/weather";
 import {WeatherPage} from "../pages/weather/weather";
 import {SensorPage} from "../pages/sensor/sensor";
+import {ReactionPage} from "../pages/reaction/reaction";
 import {HttpModule} from "@angular/http";
 import {SettingsPage} from "../pages/settings/settings";
 
@@ -57,6 +58,7 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 		AlcoholPage,
     SettingsPage,
     SensorPage,
+    ReactionPage,
     Secu1Page,
     Secu2Page,
     Secu3Page
@@ -85,6 +87,7 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 		AlcoholPage,
     SettingsPage,
     SensorPage,
+    ReactionPage,
     Secu1Page,
     Secu2Page,
     Secu3Page

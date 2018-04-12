@@ -1,0 +1,62 @@
+<!--
+  Generated template for the ReactionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>reaction</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Test Reaction
+    </ion-list-header>
+    <ion-card>
+      <ion-card-content  class="card-home-last">
+        Appuyez sur la zone noire ci-dessous lorsqu'elle changera de couleur.
+        Cliquez sur "commencer" lorsque vous êtes prêt !
+      </ion-card-content>
+    </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button block (click)="startWatching()">
+            Commencer
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col style="background:#222">
+          <button ion-button [color]="cardColor" block large (click)="stopWatching()" >
+          </button>
+          <button ion-button [color]="cardColor" block large (click)="stopWatching()" >
+          </button>
+          <button ion-button [color]="cardColor" block large (click)="stopWatching()" >
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-card>
+      <ion-card-header>
+        Temps : {{reactionTime}} s
+      </ion-card-header>
+
+      <ion-card-content class="card-home-last">
+        {{message}} Le temps de réaction moyen en voiture est de l'ordre de 800 ms.
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
+
+</ion-content>

@@ -1,3 +1,22 @@
 page-sensor {
+  .zone{
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .card-zone{
+    height: 500px;
+  }
+
+  .bigButtonWrapper {
+    margin-top : 10px;
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  .bigButton-50 {
+    line-height: 20vh !important;
+    width: 50%;
+  }
 
 }
