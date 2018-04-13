@@ -16,7 +16,6 @@ import {PlacePage} from "../pages/place/place";
 import {SetLocationPage} from "../pages/set-location/set-location";
 import * as keys from '../keys/keys.json'
 import {PlacesService} from "../services/places";
-import {AboutPage} from "../pages/about/about";
 import {ContactPage} from "../pages/contact/contact";
 import {TabsPage} from "../pages/tabs/tabs";
 import {UrgentPage} from "../pages/urgent/urgent";
@@ -46,7 +45,6 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 @NgModule({
 	declarations: [
 		MyApp,
-    AboutPage,
     ContactPage,
     HomePage,
     TabsPage,
@@ -76,7 +74,6 @@ console.log('api key: %s', keys[ 'googleMaps' ]);
 	bootstrap: [ IonicApp ],
 	entryComponents: [
 		MyApp,
-    AboutPage,
     ContactPage,
     HomePage,
     TabsPage,
