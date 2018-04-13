@@ -7,7 +7,6 @@ import {HomePage} from "../pages/home/home";
 import {WeatherPage} from "../pages/weather/weather";
 import {AddPlacePage} from "../pages/add-place/add-place";
 import {ContactPage} from "../pages/contact/contact";
-import {AboutPage} from "../pages/about/about";
 import {ClassicPage} from "../pages/classic/classic";
 import {UrgentPage} from "../pages/urgent/urgent";
 
@@ -27,34 +26,17 @@ export class MyApp {
 	rootPage: any = TabsPage;
   pages: PageInterface[] = [
       { title: 'Home',pageName:'TabsPage', component: HomePage,index:0, icon: "home"},
-      // { title: 'Help', component: UrgentPage, icon: "medkit" },
       { title: 'Begin',pageName:'TabsPage', component: ClassicPage,index:1, icon: "car" },
       { title: 'Weather',pageName:'TabsPage',component: WeatherPage,index:2, icon: "cloudy-night" },
       { title: 'Incident',pageName:'TabsPage', component: AddPlacePage,index:3, icon: "add-circle"}
   ]
 
-	//pages: Array<{title: string,pageName:string, component: any,index?:any, icon: string}>;
-
-	// constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-	// 	platform.ready().then(() => {
-	// 		// Okay, so the platform is ready and our plugins are available.
-	// 		// Here you can do any higher level native things you might need.
-	// 		statusBar.styleDefault();
-	// 		splashScreen.hide();
-	// 	});
-	// }
+	
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
-    // this.pages = [
-    //   { title: 'Home',pageName:'TabsPage', component: HomePage,index:0, icon: "home"},
-    //   // { title: 'Help', component: UrgentPage, icon: "medkit" },
-    //   { title: 'Begin',pageName:'TabsPage', component: ClassicPage,index:1, icon: "car" },
-    //   { title: 'Weather',pageName:'TabsPage',component: WeatherPage,index:2, icon: "cloudy-night" },
-    //   { title: 'Incident',pageName:'TabsPage', component: AddPlacePage,index:3, icon: "add-circle"}
-    // ];
+    
 
   }
 
