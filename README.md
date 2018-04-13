@@ -1,15 +1,25 @@
 # Beware - App  
   
-## An Ionic 3 + Angular 5 mobile APP  
+## Ionic 3 + Angular 5 Application Mobile  
   
 ### Notes:  
-**Install the packages:**
+**Installer les packages:**
 >npm install  
-  
-*Here are the required adjustments for angular maps.*  
-  
-**Install the agm package:** 
+
+**Installer le package agm :** 
 >npm install --save @agm/core  
-  
-**Create the file src/keys/keys.json with:**  
->{ "googleMaps": "your google maps api key" }
+
+**Lancer sur emulateur Android**
+>ionic cordova run android
+
+**Lancer sur mobile Android physique**
+>ionic cordova run android --device
+
+**Lancer sur navigateur**
+>ionic serve
+
+**ou avec : (affichage plus optimisé pour le multiplateforme)**
+>ionic lab
+
+**chemin du .apk après build pour Android**
+>..\platforms\android\app\build\outputs\apk\debug
