@@ -7,13 +7,6 @@ import {Secu2Page} from "../secu2/secu2";
 import {Secu3Page} from "../secu3/secu3";
 
 
-/**
- * Generated class for the UrgentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-urgent',

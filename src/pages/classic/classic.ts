@@ -9,12 +9,6 @@ import {AlcoholPage} from "../alcohol/alcohol";
 import {SensorPage} from "../sensor/sensor";
 import {ReactionPage} from "../reaction/reaction";
 
-/**
- * Generated class for the ClassicPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -37,8 +31,7 @@ export class ClassicPage {
               public navParams: NavParams,
               private weatherProvider:WeatherProvider,
 	            private placesService: PlacesService,
-              private storage:Storage,
-              private geoCtrl: Geolocation,) {
+              private storage:Storage) {
   }
 
   ionViewDidLoad() {

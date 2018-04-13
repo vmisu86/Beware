@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
-import {AlertController, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
-import {UrgentPage} from "../urgent/urgent";
+import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {ResultPage} from "../result/result";
 
-/**
- * Generated class for the AlcoholPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -23,7 +16,7 @@ export class AlcoholPage {
   volume:number;
   heurePasser:number;
   BAC: number;
-  constructor(public modalCtrl: ModalController,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

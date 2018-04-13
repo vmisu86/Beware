@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {DeviceMotion, DeviceMotionAccelerationData} from '@ionic-native/device-motion';
 import {NgProgressService} from "ng2-progressbar";
 
-/**
- * Generated class for the SensorPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

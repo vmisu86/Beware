@@ -23,10 +23,8 @@ declare const google;
 })
 export class HomePage implements OnInit{
 	addPlacePage = AddPlacePage;
-	urgentPage = UrgentPage;
 	classicPage = ClassicPage;
 	weatherPage = WeatherPage;
-  homePage = HomePage;
 
 	places: Place[] = [];
   weather:any;
@@ -46,7 +44,7 @@ export class HomePage implements OnInit{
 
   @ViewChild('map') mapRef: ElementRef;
 
-  //map: goog;
+
 	constructor(public modalCtrl: ModalController,
               public navCtrl: NavController,
               public navParams: NavParams,
@@ -133,31 +131,31 @@ export class HomePage implements OnInit{
         infoWindow.setContent(this.streetNumber+' '+this.street+'-'+this.city);
 
 
-        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+        this.nativeGeocoder.reverseGeocode(pos.lat, pos.lng)
           .then((result: NativeGeocoderReverseResult) => this.json = JSON.stringify(result))
           .catch((error: any) => console.log(error));
 
-        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+        this.nativeGeocoder.reverseGeocode(pos.lat, pos.lng)
           .then((result2: NativeGeocoderReverseResult) => this.countryCode = result2[0].countryCode)
           .catch((error: any) => console.log(error));
 
-        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+        this.nativeGeocoder.reverseGeocode(pos.lat, pos.lng)
           .then((result2: NativeGeocoderReverseResult) => this.countryName = result2[0].countryName)
           .catch((error: any) => console.log(error));
 
-        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+        this.nativeGeocoder.reverseGeocode(pos.lat, pos.lng)
           .then((result2: NativeGeocoderReverseResult) => this.postalCode = result2[0].postalCode)
           .catch((error: any) => console.log(error));
 
-        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+        this.nativeGeocoder.reverseGeocode(pos.lat, pos.lng)
           .then((result2: NativeGeocoderReverseResult) => this.city = result2[0].locality)
           .catch((error: any) => console.log(error));
 
-        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+        this.nativeGeocoder.reverseGeocode(pos.lat, pos.lng)
           .then((result2: NativeGeocoderReverseResult) => this.street = result2[0].thoroughfare)
           .catch((error: any) => console.log(error));
 
-        this.nativeGeocoder.reverseGeocode(posNice.lat, posNice.lng)
+        this.nativeGeocoder.reverseGeocode(pos.lat, pos.lng)
           .then((result2: NativeGeocoderReverseResult) => this.streetNumber = result2[0].subThoroughfare)
           .catch((error: any) => console.log(error));
 
