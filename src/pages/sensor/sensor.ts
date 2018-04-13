@@ -27,14 +27,14 @@ export class SensorPage {
   private buttonColor:string = "";
   public workoutProgressX:string = '50%';
   public workoutProgressNumX:number = 50;
-  private messageProgressX: string = "BON";
+  private messageProgressX: string = "OK";
   private buttonColorX:string="light";
   public workoutProgressY:string = '50%';
   public workoutProgressNumY:number = 50;
-  private messageProgressY: string = "BON";
+  private messageProgressY: string = "OK";
   private buttonColorY:string="light";
-  private messageHead:string = "RàS";
-  private messageBody:string = "RàS";
+  private messageHead:string = "";
+  private messageBody:string = "";
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -113,7 +113,7 @@ export class SensorPage {
     this.workoutProgressNumX = this.precisionRound(Math.min( val, 100), 0);
     this.workoutProgressX = this.workoutProgressNumX.toString()+"%";
     if (40<this.workoutProgressNumX && this.workoutProgressNumX<61){
-      this.messageProgressX = "BON";
+      this.messageProgressX = "OK";
       this.buttonColorX="light";
     }else{
       this.messageProgressX = "OUT";
@@ -126,7 +126,7 @@ export class SensorPage {
     this.workoutProgressNumY = this.precisionRound(Math.min( val, 100), 0);
     this.workoutProgressY = this.workoutProgressNumY.toString()+"%";
     if (40<this.workoutProgressNumY && this.workoutProgressNumY<61){
-      this.messageProgressY = "BON";
+      this.messageProgressY = "OK";
       this.buttonColorY="light";
     }else{
       this.messageProgressY = "OUT";

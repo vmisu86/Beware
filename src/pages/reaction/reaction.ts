@@ -50,7 +50,7 @@ export class ReactionPage {
     } else if ((this.reactionTime*10)<11){
       this.message="Votre temps de réaction est un peu élevé. Faite attention sur la route.";
     } else if ((this.reactionTime*10)<15){
-      this.message="Votre temps de réaction est bien trop élevé. Vous ne devriez pas prendre la route.";
+      this.message="Votre temps de réaction est anormalement élevé. Vous ne devriez pas prendre la route.";
     } else {
       this.message="Impossible de prendre la route de cet état, risque très important.";
     }

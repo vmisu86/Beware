@@ -21,10 +21,10 @@ export class Secu3Page {
   locale:string;
 
   constructor(private tts:TextToSpeech ,public navCtrl: NavController, public navParams: NavParams) {
-    this.text ='En cas de saignement,' +
-               ' Evitez, si possible, tout contact avec le sang de la victime ;' +
-                ' demandez-lui de comprimer elle-même sa blessure.' +
-                'Sinon, exercez une pression directement sur la plaie avec vos mains protégées ' +
+    this.text ='En cas de saignement. ' +
+               'Evitez, si possible, tout contact avec le sang de la victime.' +
+                ' Demandez-lui de comprimer elle-même sa blessure.' +
+                'Sinon, exercez une pression directement sur la plaie avec vos mains protégées. ' +
                 'Allongez la victime en position horizontale.' +
                 'Demandez à une personne présente d\'alerter les secours ' +
                 'ou faites-le vous-même si vous êtes seul.' +
